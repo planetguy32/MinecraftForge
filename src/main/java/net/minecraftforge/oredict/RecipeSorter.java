@@ -201,9 +201,9 @@ public class RecipeSorter implements Comparator<IRecipe>
                 FMLLog.info("  Unknown recipe class! %s Modder please refer to %s", cls.getName(), RecipeSorter.class.getName());
                 warned.add(cls);
             }
-            cls = cls.getSuperclass();
             while (cls != Object.class)
             {
+                cls = cls.getSuperclass();
                 ret = priorities.get(cls);
                 if (ret != null)
                 {
